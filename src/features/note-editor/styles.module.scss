@@ -1,0 +1,23 @@
+.root {
+  width: 100%;
+  height: 100%;
+  padding: 20px
+}
+
+.editor {
+  & > input {
+    border: none;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+  } 
+}
+
+.public-DraftEditor-content {
+  max-height: calc(100vh - 160px);
+  overflow: scroll;
+}

@@ -1,0 +1,14 @@
+.root {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  height: 100vh;
+
+  h1 {
+    font-size: 24px;
+    font-weight: 100;
+  }
+  img {
+    width: 40px;
+  }
+}

@@ -1,0 +1,55 @@
+.root {
+  transition: all .3s ease-in-out;
+  text-decoration: none;
+  display: flex;
+  padding: 0 0 0 20px;
+  position: relative;
+
+  &_active,
+  &:hover {
+    background-color: var(--color-hover);
+    .removeNote {
+      display: block;
+    }
+  }
+}
+.removeNote {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: none;
+
+  img {
+    width:8px;
+  }
+}
+.noteContent {
+  color: var(--color-dark);
+  width: 100%;
+
+  h3 {
+    font-size: 16px;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  &_dateContent {
+    display: flex;
+    border-bottom: 1px solid var(--color-gray-2);
+    gap: 5px;
+    padding:  0 0 5px 0;
+
+    time {
+      font-size: 14px;
+    }
+    span {
+      font-size: 14px;
+      color: var(--color-gray-3);
+      max-width: 140px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+}
