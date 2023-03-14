@@ -1,6 +1,6 @@
 import { MouseEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, redirect  } from 'react-router-dom';
 import classNames from 'classnames';
 import { deleteNote, selectNote, getActiveNoteId } from 'entities/notes/model';
 import iconCross from 'assets/cross-icon.svg';
@@ -15,15 +15,19 @@ interface NoteItemProps {
 const NoteItem: React.FC<NoteItemProps> = ({
   data,
 }) => {
-
+  
   const dispatch = useDispatch();
   const activeNoteId = useSelector(getActiveNoteId);
   
   const handleDeleteNote = (event: MouseEvent<HTMLButtonElement>, id: string) => {
     event.preventDefault();
-    dispatch(deleteNote(id))
-    dispatch(selectNote(null))
-
+    dispatch(deleteNote(id));
+    dispatch(selectNote(null));
+    
+    if (id === activeNoteId) {
+       redirect('/');
+    }
+    
   }
   
   const handleSelectNote = (id: string) => {
@@ -56,4 +60,4 @@ const NoteItem: React.FC<NoteItemProps> = ({
   );
 };
 
-export default NoteItem
+export default NoteItem;
